@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.MenureglementController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="14.0" layoutY="10.0" prefHeight="729.0" prefWidth="1260.0">
+         <children>
+            <TextField fx:id="rechact" layoutX="422.0" layoutY="107.0" onAction="#rechercheractivite" prefHeight="26.0" prefWidth="297.0" promptText="Search" />
+            <TableView fx:id="tab_act" layoutX="343.0" layoutY="148.0" onMouseClicked="#getSelected" prefHeight="410.0" prefWidth="914.0">
+               <columns>
+                  <TableColumn fx:id="col_lib" prefWidth="112.0" text="libelle" />
+                  <TableColumn fx:id="col_prix" prefWidth="111.0" text="Prix" />
+                  <TableColumn fx:id="col_emp" prefWidth="146.0" text="Emplacement" />
+                  <TableColumn fx:id="col_desc" minWidth="0.0" prefWidth="199.0" text="description" />
+                  <TableColumn fx:id="col_date" prefWidth="117.0" text="Date" />
+                  <TableColumn fx:id="col_type" prefWidth="76.0" text="type" />
+                  <TableColumn fx:id="col_avis" prefWidth="151.0" text="Avis" />
+               </columns>
+            </TableView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f50606" height="771.0" layoutX="-9.0" layoutY="-10.0" opacity="0.24" stroke="BLACK" strokeType="INSIDE" width="342.0" />
+            <Button fx:id="triactivite" layoutX="801.0" layoutY="95.0" mnemonicParsing="false" onAction="#triactivite" opacity="0.0" prefHeight="25.0" prefWidth="18.0" />
+            <Button fx:id="modifact" layoutX="19.0" layoutY="673.0" mnemonicParsing="false" onAction="#modifieractivite" prefHeight="34.0" prefWidth="79.0" style="-fx-background-color: #2080df;" text="Modifier" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="ajoutact" layoutX="19.0" layoutY="593.0" mnemonicParsing="false" onAction="#ajoutactivite" prefHeight="33.0" prefWidth="79.0" style="-fx-background-color: #2080df;" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label fx:id="label" layoutX="89.0" layoutY="34.0" text="Consultation ">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="128.0" prefHeight="20.0" prefWidth="152.0" text="Identifiant d'utilisateur:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="211.0" prefHeight="20.0" prefWidth="107.0" text="Date operation:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="281.0" text="Montant:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="343.0" text="mode de paiement:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="18.0" layoutY="416.0" prefHeight="20.0" prefWidth="107.0" text="Date echeancier:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="annuleract" layoutX="183.0" layoutY="673.0" mnemonicParsing="false" onAction="#annuler" prefHeight="34.0" prefWidth="83.0" style="-fx-background-color: #2080df;" text="Annuler" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <RadioButton fx:id="radioajout" layoutX="758.0" layoutY="111.0" mnemonicParsing="false" onAction="#ajoutcheck" text="Ajouter">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="arwa" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radiomodif" layoutX="855.0" layoutY="111.0" mnemonicParsing="false" onAction="#modifcheck" text="Modifier" toggleGroup="$arwa">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="radioconsult" layoutX="1071.0" layoutY="112.0" mnemonicParsing="false" onAction="#consultcheck" text="Consulter" toggleGroup="$arwa">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </RadioButton>
+            <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="358.0" layoutY="103.0">
+               <image>
+                  <Image url="@../../../../../projeta/src/imagedesk/out-of-stock.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="stat" layoutX="331.0" layoutY="97.0" mnemonicParsing="false" onAction="#statistique" opacity="0.0" prefHeight="42.0" prefWidth="47.0" />
+            <Label fx:id="actanim" layoutX="358.0" layoutY="18.0" prefHeight="66.0" prefWidth="197.0" text="Activité">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Label>
+            <Label fx:id="error" layoutX="40.0" layoutY="394.0" textFill="RED" />
+            <TextField fx:id="prix" layoutX="169.0" layoutY="275.0" onAction="#libvalid" prefHeight="31.0" prefWidth="145.0" />
+            <RadioButton fx:id="radiosupp" layoutX="958.0" layoutY="111.0" mnemonicParsing="false" onAction="#suppcheck" text="Supprimer">
+               <toggleGroup>
+                  <ToggleGroup fx:id="arwa1" />
+               </toggleGroup>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </RadioButton>
+            <Button fx:id="suppact" layoutX="183.0" layoutY="595.0" mnemonicParsing="false" onAction="#supprimeractivite" prefHeight="30.0" prefWidth="83.0" style="-fx-background-color: #2080df;" text="Supprimer" textFill="#f8f8f8">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="33.0" fitWidth="18.0" layoutX="723.0" layoutY="115.0">
+               <image>
+                  <Image url="@../../../../../projeta/src/imagedesk/sort-down.png" />
+               </image>
+            </ImageView>
+            <ComboBox layoutX="172.0" layoutY="124.0" prefHeight="31.0" prefWidth="145.0" />
+            <DatePicker layoutX="172.0" layoutY="205.0" prefHeight="31.0" prefWidth="145.0" />
+            <ComboBox layoutX="172.0" layoutY="338.0" prefHeight="31.0" prefWidth="145.0" />
+            <DatePicker layoutX="172.0" layoutY="410.0" prefHeight="31.0" prefWidth="145.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
