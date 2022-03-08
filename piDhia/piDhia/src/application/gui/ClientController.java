@@ -5,6 +5,7 @@
  */
 package application.gui;
 
+import com.esprit.gui.EtablissementController;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
