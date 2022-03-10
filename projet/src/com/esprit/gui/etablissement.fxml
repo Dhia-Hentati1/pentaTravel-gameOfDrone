@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane id="AnchorPane" prefHeight="807.0" prefWidth="1126.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.EtablissementController">
+  
+   <children>
+      <AnchorPane layoutX="373.0" layoutY="116.0" prefHeight="500.0" prefWidth="775.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="373.0" AnchorPane.rightAnchor="-22.0">
+         <children>
+            <TableView fx:id="tableEtablissement" layoutX="20.0" layoutY="263.0" onMouseClicked="#tableViewEtablissement" prefHeight="200.0" prefWidth="653.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="49.0">
+              <columns>
+                <TableColumn fx:id="cinID" prefWidth="58.0" text="ID" />
+                <TableColumn fx:id="cinIdProp" prefWidth="104.0" text="ID PROP" />
+                  <TableColumn fx:id="cinNumero" prefWidth="104.0" text="Numero" />
+                  <TableColumn fx:id="cinType" prefWidth="75.0" text="Type" />
+                  <TableColumn fx:id="cinNom" prefWidth="75.0" text="Nom" />
+                  <TableColumn fx:id="cinAdresse" prefWidth="75.0" text="Adresse" />
+                  <TableColumn fx:id="cinDescription" prefWidth="61.0" text="Description" />
+                  <TableColumn fx:id="cinAvis" prefWidth="102.0" text="Avis" />
+              </columns>
+               <columnResizePolicy>
+                 
+               </columnResizePolicy>
+            </TableView>
+            <Label layoutX="32.0" layoutY="212.0" text="search" />
+            <TextField fx:id="tfSearch" layoutX="93.0" layoutY="215.0" />
+            <Button fx:id="btnSearch" layoutX="309.0" layoutY="226.0" mnemonicParsing="false" onAction="#searchEtablissement" text="search" />
+         </children>
+      </AnchorPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#094c9a" height="807.0" stroke="BLACK" strokeType="INSIDE" width="304.0" />
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="61.0" layoutY="14.0">
+         <image>
+            <Image url="img/logo.png" />
+         </image>
+      </ImageView>
+      <Label contentDisplay="CENTER" layoutX="19.0" layoutY="263.0" prefHeight="18.0" prefWidth="55.0" text="ID PROP" />
+      <Label layoutX="19.0" layoutY="306.0" text="NOM" />
+      <Label layoutX="16.0" layoutY="347.0" text="Description" />
+      <Label layoutX="22.0" layoutY="393.0" text="Avis" />
+      <TextField fx:id="tfID" layoutX="102.0" layoutY="259.0" />
+      <TextField fx:id="tfNom" layoutX="102.0" layoutY="301.0" />
+      <TextField fx:id="tfDescription" layoutX="102.0" layoutY="342.0" prefHeight="26.0" prefWidth="159.0" />
+      <TextField fx:id="tfAvis" layoutX="102.0" layoutY="389.0" />
+      <Label layoutX="14.0" layoutY="528.0" prefHeight="18.0" prefWidth="44.0" text="Type" />
+      <Label layoutX="10.0" layoutY="445.0" text="Numero" />
+      <Label layoutX="14.0" layoutY="487.0" prefHeight="18.0" prefWidth="62.0" text="Adresse" />
+      <TextField fx:id="tfNumero" layoutX="107.0" layoutY="441.0" />
+      <TextField fx:id="tfType" layoutX="107.0" layoutY="525.0" />
+      <TextField fx:id="tfAdresse" layoutX="107.0" layoutY="483.0" />
+      <Button fx:id="btnUpdate" layoutX="188.0" layoutY="613.0" mnemonicParsing="false" onAction="#UpdateEtablissement" prefHeight="31.0" prefWidth="100.0" text="UPDATE" />
+      <Button fx:id="btnDelete" layoutX="20.0" layoutY="702.0" mnemonicParsing="false" onAction="#DeleteEtablissement" prefHeight="31.0" prefWidth="107.0" text="DELETE" />
+      <Button fx:id="btnReset" layoutX="188.0" layoutY="702.0" mnemonicParsing="false" onAction="#ResetEtablissement" prefHeight="31.0" prefWidth="100.0" text="RESET" />
+      <Button fx:id="btnADD" layoutX="24.0" layoutY="613.0" mnemonicParsing="false" onAction="#AddEtablissement" prefHeight="31.0" prefWidth="100.0" text="ADD" />
+   </children>
+</AnchorPane>
