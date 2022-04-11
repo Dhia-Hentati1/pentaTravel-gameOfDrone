@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="column" style="display: flex;align-items: center;justify-content: center;margin-top: 150px; padding: 10px;">
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">UPDATE Etablissement Backend ADMIN</h5>
+
+                {{ form_start(f,{attr:{novalidate:'novalidate'}}) }}
+                <label for="inputText" class="col-sm-4 col-form-label">ID PROP</label>
+                <div class="form-group">
+                    {{ form_widget(f.id_prop,{'attr':{'class':'form-control'}}) }}
+                </div>
+                {{ form_errors(f.id_prop,{'attr':{'class':'text-danger'}}) }}
+
+                <label for="inputText" class="col-sm-4 col-form-label">NUMERO</label>
+                <div class="form-group">
+                    {{ form_widget(f.numero,{'attr':{'class':'form-control'}}) }}
+                </div>
+                {{ form_errors(f.numero,{'attr':{'class':'text-danger'}}) }}
+
+                <label for="inputText" class="col-sm-4 col-form-label">TYPE</label>
+                <div class="form-group">
+                    {{ form_widget(f.type,{'attr':{'class':'form-control'}}) }}
+                </div>
+                {{ form_errors(f.type,{'attr':{'class':'text-danger'}}) }}
+
+                <label for="inputText" class="col-sm-4 col-form-label">NOM</label>
+                <div class="form-group">
+                    {{ form_widget(f.nom,{'attr':{'class':'form-control'}}) }}
+                </div>
+                {{ form_errors(f.nom,{'attr':{'class':'text-danger'}}) }}
+
+                <label for="inputText" class="col-sm-4 col-form-label">ADRESSE</label>
+                <div class="form-group">
+                    {{ form_widget(f.adresse,{'attr':{'class':'form-control'}}) }}
+                </div>
+                {{ form_errors(f.adresse,{'attr':{'class':'text-danger'}}) }}
+
+                <label for="inputText" class="col-sm-6 col-form-label">DESCRIPTION</label>
+                <div class="form-group">
+                    {{ form_widget(f.description,{'attr':{'class':'form-control'}}) }}
+                </div>
+                {{ form_errors(f.description,{'attr':{'class':'text-danger'}}) }}
+
+                <label for="inputText" class="col-sm-4 col-form-label">AVIS</label>
+                <div class="form-group">
+                    {{ form_widget(f.avis,{'attr':{'class':'form-control'}}) }}
+                </div>
+                {{ form_errors(f.avis,{'attr':{'class':'text-danger'}}) }}
+
+                <br/>
+                <div class="form-group" style="display: flex;align-items: center;justify-content: center">
+
+                    {{ form_widget(f.ajouter,{'attr':{'class':'btn btn-primary'}}) }}
+                </div>
+                {{ form_end(f) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock%}

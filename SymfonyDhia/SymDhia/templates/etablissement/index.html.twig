@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div class="row" style="display: flex;align-items: center;justify-content: center;margin-top: 150px;">
+
+        <div class="col-lg-6">
+
+            <div class="card">
+                <div class="card-body">
+                    <a href="{{ path('addEtablissement') }}"><i class="ri-arrow-left-circle-fill" style="font-size: 50px;"></i></a>
+                    <h5 class="card-title">Liste des etablissements</h5>
+
+                    <!-- Table with stripped rows -->
+                    <table class="table table-striped">
+                        <thead>
+                      <tr>  <th>ID PROP</th>
+                        <th>Numero</th>
+                        <th>Type</th>
+                        <th>Nom</th>
+                        <th>Adresse</th>
+                        <th>Description</th>
+                          <th>Avis</th>
+                      <th>Modification</th>
+                          <th>Suppression</th></tr>
+                        </thead>
+
+                        <tbody>
+                        {% for etablissement in e %}
+                            <tr>
+                                <td>{{ etablissement.getIdProp() }}</td>
+                                <td>{{ etablissement.numero }}</td>
+                                <td>{{ etablissement.type }}</td>
+                                <td>{{ etablissement.nom }}</td>
+                                <td>{{ etablissement.adresse }}</td>
+                                <td>{{ etablissement.description }}</td>
+                                <td>{{ etablissement.avis }}</td>
+                                <td>
+                                    <a class="btn btn-success" href="{{ path('modifEtablissement',{'id':etablissement.id}) }}">Modifier</a>
+                                </td>
+                               <td> <a href="{{ path('supp_etablissement',{'id':etablissement.id}) }}" class="btn btn-danger" onclick="return confirm('Etes-vous sûr de supprimer ?');">Supprimer</a>
+                               </td>
+
+
+
+                            </tr>
+
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                    <!-- End small tables -->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
