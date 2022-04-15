@@ -1,0 +1,105 @@
+{%extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+    <div  class="card" style="display: flex;align-items:center;justify-content: center;">
+        <a href="{{ path('display_activite') }}"><i class="ti-control-skip-forward"style="font-size: 50px;"></i> </a>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Modifier Activite Backend</h5>
+                <br/>
+                <br/>
+                <div class="form-validation">
+
+                    {{ form_start(f,{attr:{novalidate:'novalidate'}}) }}
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-username">Libele <span class="text-danger">*</span></label>
+                        <div class="col-lg-8">
+                            {{ form_widget(f.libele,{'attr':{'class':'form-control'}}) }}
+                            {{ form_errors(f.libele,{'attr':{'class':'text-danger'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-username">Prix <span class="text-danger">*</span></label>
+                        <div class="col-lg-8">
+                            {{ form_widget(f.prix,{'attr':{'class':'form-control'}}) }}
+                            {{ form_errors(f.prix,{'attr':{'class':'text-danger'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-username">Emplacement <span class="text-danger">*</span></label>
+                        <div class="col-lg-8">
+                            {{ form_widget(f.emplacement,{'attr':{'class':'form-control'}}) }}
+                            {{ form_errors(f.emplacement,{'attr':{'class':'text-danger'}}) }}
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-username">Description <span class="text-danger">*</span></label>
+                        <div class="col-lg-8">
+                            {{ form_widget(f.description,{'attr':{'class':'form-control'}}) }}
+                            {{ form_errors(f.description,{'attr':{'class':'text-danger'}}) }}
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" >Date <span >*</span></label>
+                        <div class="col-lg-8">
+                            {{ form_widget(f.date,{'attr':{'class':'form-control'}}) }}
+                            {{ form_errors(f.date,{'attr':{'class':'text-danger'}}) }}
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-username">Type <span class="text-danger">*</span></label>
+                        <div class="col-lg-8">
+                            {{ form_widget(f.type,{'attr':{'class':'form-control'}}) }}
+                            {{ form_errors(f.type,{'attr':{'class':'text-danger'}}) }}
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-username">Avis <span class="text-danger">*</span></label>
+                        <div class="col-lg-8">
+                            {{ form_widget(f.avis,{'attr':{'class':'form-control'}}) }}
+                            {{ form_errors(f.avis,{'attr':{'class':'text-danger'}}) }}
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-username">Path image <span class="text-danger">*</span></label>
+                        <div class="col-lg-8">
+                            {{ form_widget(f.image,{'attr':{'class':'form-control'}}) }}
+                            {{ form_errors(f.image,{'attr':{'class':'text-danger'}}) }}
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group row">
+                        <div class="col-lg-8 ml-auto">
+
+                            {{ form_widget(f.Ajouter,{'attr':{'class':'btn btn-primary'}}) }}
+                        </div>
+                    </div>
+
+
+
+
+
+                    {{ form_end(f) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

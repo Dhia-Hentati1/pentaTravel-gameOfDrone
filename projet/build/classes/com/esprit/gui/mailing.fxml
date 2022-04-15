@@ -10,18 +10,18 @@
 
 <AnchorPane id="AnchorPane" prefHeight="437.0" prefWidth="508.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.gui.MailingController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#094c9a" height="437.0" stroke="BLACK" strokeType="INSIDE" width="509.0" />
-      <Label layoutX="59.0" layoutY="63.0" text="Envoyée à :" textFill="#f4eeee">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cfd1d3" height="437.0" stroke="BLACK" strokeType="INSIDE" width="509.0" />
+      <Label layoutX="59.0" layoutY="63.0" text="Envoyée à :">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="59.0" layoutY="109.0" text="Sujet : " textFill="#f4eeee">
+      <Label layoutX="59.0" layoutY="109.0" text="Sujet : ">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="59.0" layoutY="160.0" text="Message :" textFill="#f4eeee">
+      <Label layoutX="59.0" layoutY="160.0" text="Message :">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

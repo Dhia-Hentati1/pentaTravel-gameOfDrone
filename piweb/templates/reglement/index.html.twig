@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+
+    </style>
+    <div class="row" style="display: flex;align-items: center;justify-content: center;margin-top: center:150px;">
+        <div class="card">
+            <div class="card-title">
+
+
+                {# bech taml btn w path thezk page okhra  #}
+                <h4>Liste des Reglements </h4>
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive" >
+                    <table class="table"    >
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Date d orperation</th>
+                            <th>Montant</th>
+                            <th>Mode de paiement</th>
+                            <th>Date echeancier</th>
+                            <th>Supprimer</th>
+                            <th>Modifier</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for reglement in a %}
+                            <tr>
+                                <td>{{ reglement.id}}</td>
+                                <td>{{ reglement.dateoperation|date }}</td>
+                                <td>{{ reglement.montant}}</td>
+                                <td>{{ reglement.modedepaiement}}</td>
+                                <td>{{ reglement.echeancier|date}}</td>
+
+                                <td>
+                                    <a class="btn btn-danger" href="{{ path('supp_reglement',{'id':reglement.id}) }}">Supprimer </a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-success" href="{{ path('modifReglement',{'id':reglement.id}) }}">Modifier </a>
+                                </td>
+                            </tr>
+
+
+
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    <!-- /# card -->
+    </div>
+
+
+    </div>
+
+{% endblock %}
