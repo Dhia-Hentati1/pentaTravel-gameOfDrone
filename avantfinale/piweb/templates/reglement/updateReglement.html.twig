@@ -1,0 +1,74 @@
+{%extends 'basefront.html.twig' %}
+{% block body %}
+    <div  class="card" style="display: flex;align-items:center;justify-content: center;">
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Modifier Rgelement</h5>
+                <br/>
+                <br/>
+                <div class="form-validation">
+
+                    {{ form_start(ff) }}
+
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-username">Date d operation <span class="text-danger">*</span></label>
+                        <div class="col-lg-8">
+                            {{ form_widget(ff.dateoperation,{'attr':{'class':'form-control'}}) }}
+                            {{ form_errors(ff.dateoperation,{'attr':{'class':'text-danger'}}) }}
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-username">montant <span class="text-danger">*</span></label>
+                        <div class="col-lg-8">
+                            {{ form_widget(ff.montant,{'attr':{'class':'form-control'}}) }}
+                            {{ form_errors(ff.montant,{'attr':{'class':'text-danger'}}) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-username">Mode de paiement <span class="text-danger">*</span></label>
+                        <div class="col-lg-8">
+                            {{ form_widget(ff.modedepaiement,{'attr':{'class':'form-control'}}) }}
+                            {{ form_errors(ff.modedepaiement,{'attr':{'class':'text-danger'}}) }}
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-username">Date echeancier <span class="text-danger">*</span></label>
+                        <div class="col-lg-8">
+                            {{ form_widget(ff.echeancier,{'attr':{'class':'form-control'}}) }}
+                            {{ form_errors(ff.echeancier,{'attr':{'class':'text-danger'}}) }}
+
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group row">
+                        <div class="col-lg-8 ml-auto">
+                            <table>
+                                <tr>
+                                    <th>{{ form_widget(ff.Ajouter,{'attr':{'class':'btn btn-primary'}}) }}</th>
+                                    <th> <a href="{{ path('display_reglement') }}"><i class="ti-control-skip-forward"style="font-size: 50px;"></i> </a></th>
+                                </tr>
+                            </table>
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    {{ form_end(ff) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

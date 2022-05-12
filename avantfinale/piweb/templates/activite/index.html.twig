@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+
+
+    <div class="row" style="display: flex;align-items: center;justify-content: center;margin-top: center:150px;">
+
+            <div class="card-title" style="display: flex;align-items: center;justify-content: center;margin-top: center:150px;">
+
+
+                <a href="{{ path('addActivite') }}"><i class="ti-control-backward"style="font-size: 50px;"></i> </a>
+
+                <h6>Liste des Activite </h6>
+            </div>
+
+        <div class="row" style="display: flex;align-items: center;justify-content: center;margin-top: center:150px;">
+            <div class="card-body">
+                <div class="table-responsive" >
+                    <table class="table"   >
+                        <thead>
+                        <tr>
+                            <th>libele</th>
+                            <th>prix</th>
+                            <th>emplacement</th>
+                            <th>description</th>
+                            <th>date</th>
+
+                            <th>image</th>
+                            <th>supprimer</th>
+                            <th>modifier</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for activite in a %}
+                            <tr>
+                                <td>{{ activite.libele}}</td>
+                                <td>{{ activite.prix}}</td>
+                                <td>{{ activite.emplacement}}</td>
+                                <td>{{ activite.description}}</td>
+                                <td>{{ activite.date|date}}</td>
+
+                                <td> <img src="{{ asset('assets/'~activite.image) }}" height="150" width="150"       ></td>
+
+
+                                <td>
+                                    <a class="btn btn-danger" href="{{ path('supp_activite',{'id':activite.id}) }}">Supprimer </a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-success" href="{{ path('modifActivite',{'id':activite.id}) }}">Modifier </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    <!-- /# card -->
+    </div>
+
+
+    </div>
+{% endblock %}

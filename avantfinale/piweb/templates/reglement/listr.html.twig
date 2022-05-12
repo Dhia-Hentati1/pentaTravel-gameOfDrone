@@ -1,0 +1,64 @@
+
+
+
+
+{% block body %}
+
+
+    <div> <img src="{{ asset('assets/logo.gif') }}" height="150" width="170" /></div>
+
+
+                {# bech taml btn w path thezk page okhra  #}
+                <h4>Liste des Reglements</h4>
+
+
+            <div class="card-body">
+                <div class="table-responsive" >
+                    <table class="table"    >
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>ID Utilisateur</th>
+                            <th>Nom Utilisateur</th>
+                            <th>Prenom Utilisateur</th>
+                            <th>Date d orperation</th>
+                            <th>Montant</th>
+                            <th>Mode de paiement</th>
+                            <th>Date echeancier</th>
+
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for reglement in a %}
+                            <tr>
+                                <td>{{ reglement.id}}</td>
+                                <td>{{ reglement.utilisateur.id}}</td>
+                                <td>{{ reglement.utilisateur.nom}}</td>
+                                <td>{{ reglement.utilisateur.prenom}}</td>
+                                <td>{{ reglement.dateoperation|date }}</td>
+
+                                <td>{{ reglement.montant}}</td>
+                                <td>{{ reglement.modedepaiement}}</td>
+                                <td>{{ reglement.echeancier|date}}</td>
+
+
+
+                            </tr>
+
+
+
+                        {% endfor %}
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+    <h4>Signature</h4>
+
+
+{% endblock %}
